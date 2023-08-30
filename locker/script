@@ -1,0 +1,9 @@
+#!/bin/bash
+IMG=~/.config/locker/anya.png
+BG=~/.config/locker/bg.png
+scrot $BG
+convert $BG -blur 0x5 $BG
+convert $BG $IMG -gravity center -composite -matte $BG
+i3lock -i $BG -k --radius 100 --{inside,ring}-color=00000000 --line-uses-inside --{key,bs}hl-color=00000000 --{verif,wrong,modif}-color=e6e6fa --{inside,ring}ver-color=00000000 --separator-color=00000000 --{time,date}-color=e6e6fa --ind-pos="640:160" --ring-width 5 --date-size=20 --time-size=50 --time-str="%r" --date-str="%a, %d/%b/%Y"
+
+rm $BG
